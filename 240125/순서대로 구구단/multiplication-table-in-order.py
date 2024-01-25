@@ -1,4 +1,12 @@
 a,b = tuple(map(int,input().split()))
 
-for i in range(1,10):
-    print(f'{a} * {i} = {a*i}  {b} * {i} = {b*i}')
+if a > b:
+    for i in range(1,10):
+        for j in range(a,b-1,-1):
+            print(f"{j} * {i} = {i * j}", end="  ")
+        print()
+else:
+    for i in range(1,10):
+        for j in range(a,b+1):
+            print(f"{j} * {i} = {i * j}", end="\t")
+        print()
