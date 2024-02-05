@@ -1,6 +1,6 @@
 height, weight = tuple(map(int,input().split()))
-
-bmi = (weight/(height**2))*10000
+height = height/100
+bmi = weight/(height**2)
 if bmi >= 25:
     print(f'{bmi:.0f}')
     print('Obesity')
