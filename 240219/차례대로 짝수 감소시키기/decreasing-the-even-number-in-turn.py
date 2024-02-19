@@ -4,7 +4,7 @@ i = 1
 lst = []
 
 while True:
-    if num == 1000:
+    if n== 1000:
         break
     else:
         num -= i*2
