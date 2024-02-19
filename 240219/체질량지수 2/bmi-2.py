@@ -2,10 +2,12 @@
 height, weight = tuple(map(int,input().split()))
 
 bmi = weight*(100**2)/height**2
-fin_bmi = f'{bmi:.0f}'
+floor_bmi = int(bmi)
+fin_bmi_floor = f'{floor_bmi:.0f}'
+# print(fin_bmi_floor)
 
-if int(fin_bmi) >= 25:
-    print(fin_bmi)
+if int(fin_bmi_floor) >= 25:
+    print(fin_bmi_floor)
     print('Obesity')
 else:
-    print(fin_bmi)
+    print(fin_bmi_floor)
