@@ -1,5 +1,5 @@
 n = int(input())
 word = input()
 
-for i in range(len(word)-1,-1,-1):
-    print(word[i],end='')
+new_word = word[::-1]
+print(new_word)
