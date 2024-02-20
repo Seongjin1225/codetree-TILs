@@ -6,4 +6,5 @@ for i, w in enumerate(sentence):
         print(i+1)
         break
     if word not in sentence:
-        print('Not Found')
+        print('Not Found') 
+        break
