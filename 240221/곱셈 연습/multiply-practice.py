@@ -1,0 +1,11 @@
+n = int(input())
+m = int(input())
+
+a = n * (int(str(m)[-1]))
+b = (n * (int(str(m)[1])))
+c = (n * (int(str(m)[0])))
+d = a+(b*10)+(c*100)
+print(a)
+print(b)
+print(c)
+print(d)
