@@ -1,7 +1,10 @@
 n = int(input())
 
-sen = 0
+sen = ''
 for i in range(n):
     word = input()
     sen += word
-print(sen)
+
+cnt = len(sen)//2
+print(sen[:cnt])
+print(sen[cnt:])
