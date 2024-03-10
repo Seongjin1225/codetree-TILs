@@ -14,9 +14,9 @@ for elem in arr:
 
     if elem >= 100:
         lst.append(elem)
-        if len(lst) == 0:
-            num_2 = -1
-        else:
-            num_2 = min(lst)
+    if len(lst) == 0:
+        num_2 = -1
+    else:
+        num_2 = min(lst)
 
 print(min_num, num_2)
