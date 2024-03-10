@@ -6,12 +6,12 @@ min_num = 0
 lst = []
 
 for elem in arr:
-    if elem < 100:
-        val = abs(elem-100)
-        if val < max_val:
-            val = max_val
-            min_num = elem
-    else:
+    val = abs(elem-100)
+    if val < max_val:
+        max_val = val
+        min_num = elem
+
+    if elem >= 100:
         lst.append(elem)
         if len(lst) == 0:
             num_2 = -1
