@@ -3,6 +3,7 @@ arr = list(map(int,input().split()))
 
 max_val = 999
 min_num = 0
+num_2 = 0
 lst = []
 
 for elem in arr:
