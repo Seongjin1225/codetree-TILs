@@ -14,5 +14,9 @@ ans = []
 for elem in num:
     if elem%2 != 0:
         ans.append(elem)
-
-print(max(ans))
+    if len(ans) == 0:
+        print(max(arr))
+        break
+    else:
+        print(max(ans))
+        break
