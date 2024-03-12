@@ -4,12 +4,15 @@ num = list(map(int,input().split()))
 arr = []
 
 for i in range(len(num)):
-    for j in range(i,len(num)):
+    for j in range(i+1,len(num)):
         arr.append(num[i]*num[j])
 arr.append(prod(num))
 
+num+=arr
+
 ans = []
-for elem in arr:
+for elem in num:
     if elem%2 != 0:
         ans.append(elem)
+
 print(max(ans))
