@@ -1,7 +1,13 @@
+import math 
 arr = list(map(float,input().split()))
 
 def calc(lst):
-    print(f'{sum(lst):.0f}')
-    print(f'{sum(lst)//3:.0f}')
-
+    val = []
+    for elem in lst:
+        val.append(round(elem))
+    ans = sum(val)
+    avg = ans/3
+    print(f'{ans:.0f}')
+    print(f'{avg:.0f}')
+    
 calc(arr)
