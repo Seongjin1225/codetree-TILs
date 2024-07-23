@@ -17,4 +17,5 @@ for i in range(len(arr)):
 for elem in ans:
     print(elem[0],"-",elem[1])
 
-print('Class {} is winner!'.format(max(ans)[0]))
+max_value = max(ans, key=lambda x: x[1])
+print('Class {} is winner!'.format(max_value[0]))
