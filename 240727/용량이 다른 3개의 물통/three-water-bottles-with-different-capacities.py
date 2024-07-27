@@ -1,33 +1,57 @@
+# n = 3
+# full = []  # 각 물병의 최대용량
+# now = []   # 현재 들어있는 용량
+# cnt = 0
+
+# for _ in range(n):
+#     x,y = list(map(int,input().split()))
+#     full.append(x)
+#     now.append(y)
+
+# for _ in range(100//3 + 1):
+#     for i in range(len(now)):
+#         if i != 2 & :
+#             now[i+1] += now[i]
+#             now[i] = 0
+#             if now[i+1] > full[i+1]:
+#                 temp = now[i+1] - full[i+1]
+#                 now[i+1] = full[i+1]
+#                 now[i] = tmp
+#             cnt += 1
+#         else:
+#             now[0] += now[i]
+#             now[i] = 0
+#             if now[0] > full[0]:
+#                 tmp = now[0] - full[0]
+#                 now[0] = full[0]
+#                 now[2] = tmp
+#             cnt += 1
+#         if cnt == 100:
+#             break
+
+# for elem in now:
+#     print(elem)
+
 n = 3
 full = []  # 각 물병의 최대용량
 now = []   # 현재 들어있는 용량
-cnt = 0
 
+# 입력 받기
 for _ in range(n):
-    x,y = list(map(int,input().split()))
+    x, y = map(int, input().split())
     full.append(x)
     now.append(y)
 
-for _ in range(100//3 + 1):
-    for i in range(len(now)):
-        if i != 2:
-            now[i+1] += now[i]
-            now[i] = 0
-            if now[i+1] > full[i+1]:
-                temp = now[i+1] - full[i+1]
-                now[i+1] = full[i+1]
-                now[i] = tmp
-            cnt += 1
-        else:
-            now[0] += now[i]
-            now[i] = 0
-            if now[0] > full[0]:
-                tmp = now[0] - full[0]
-                now[0] = full[0]
-                now[2] = tmp
-            cnt += 1
-        if cnt == 100:
-            break
+# 물병의 용량을 순환적으로 이동
+for _ in range(100):
+    for i in range(n):
+        next_i = (i + 1) % n  # 다음 물병의 인덱스
+        now[next_i] += now[i]
+        now[i] = 0
+        if now[next_i] > full[next_i]:
+            now[i] = now[next_i] - full[next_i]
+            now[next_i] = full[next_i]
 
+now[0], now[1] = now[1], now[0]
 for elem in now:
     print(elem)
