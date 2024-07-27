@@ -44,14 +44,30 @@ for _ in range(n):
 
 # 물병의 용량을 순환적으로 이동
 for _ in range(100):
-    for i in range(n):
-        next_i = (i + 1) % n  # 다음 물병의 인덱스
-        now[next_i] += now[i]
-        now[i] = 0
-        if now[next_i] > full[next_i]:
-            now[i] = now[next_i] - full[next_i]
-            now[next_i] = full[next_i]
+    # 1번 물병 -> 2번 물병
+    now[1] += now[0]
+    if now[1] > full[1]:
+        now[0] = now[1] - full[1]
+        now[1] = full[1]
+    else:
+        now[0] = 0
 
-now[0], now[1] = now[1], now[0]
+    # 2번 물병 -> 3번 물병
+    now[2] += now[1]
+    if now[2] > full[2]:
+        now[1] = now[2] - full[2]
+        now[2] = full[2]
+    else:
+        now[1] = 0
+
+    # 3번 물병 -> 1번 물병
+    now[0] += now[2]
+    if now[0] > full[0]:
+        now[2] = now[0] - full[0]
+        now[0] = full[0]
+    else:
+        now[2] = 0
+
+# 결과 출력
 for elem in now:
     print(elem)
