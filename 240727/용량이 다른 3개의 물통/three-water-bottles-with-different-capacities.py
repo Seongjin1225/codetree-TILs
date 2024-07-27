@@ -35,15 +35,15 @@
 n = 3
 full = []  # 각 물병의 최대용량
 now = []   # 현재 들어있는 용량
+cnt = 0
 
-# 입력 받기
 for _ in range(n):
     x, y = map(int, input().split())
     full.append(x)
     now.append(y)
 
 # 물병의 용량을 순환적으로 이동
-for _ in range(100):
+for _ in range(100//3 + 1):
     # 1번 물병 -> 2번 물병
     now[1] += now[0]
     if now[1] > full[1]:
@@ -51,7 +51,9 @@ for _ in range(100):
         now[1] = full[1]
     else:
         now[0] = 0
-
+    cnt+=1
+    if cnt == 100:
+        break
     # 2번 물병 -> 3번 물병
     now[2] += now[1]
     if now[2] > full[2]:
@@ -59,6 +61,7 @@ for _ in range(100):
         now[2] = full[2]
     else:
         now[1] = 0
+    cnt += 1
 
     # 3번 물병 -> 1번 물병
     now[0] += now[2]
@@ -67,7 +70,7 @@ for _ in range(100):
         now[0] = full[0]
     else:
         now[2] = 0
+    cnt +=1 
 
-# 결과 출력
 for elem in now:
     print(elem)
