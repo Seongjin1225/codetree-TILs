@@ -29,7 +29,6 @@
 #     print(elem,end='')
 
 def convert_to_decimal(n, base):
-    """ Convert a number n from base `base` to decimal (base 10). """
     decimal_value = 0
     length = len(n)
     for i in range(length):
@@ -41,7 +40,6 @@ def convert_to_decimal(n, base):
     return decimal_value
 
 def convert_from_decimal(decimal, base):
-    """ Convert a decimal (base 10) number to `base` base. """
     if decimal == 0:
         return "0"
     
