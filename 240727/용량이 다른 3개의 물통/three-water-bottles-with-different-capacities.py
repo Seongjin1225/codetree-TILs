@@ -31,4 +31,3 @@ for _ in range(100//3 + 1):
 
 for elem in now:
     print(elem)
-    print()
