@@ -2,20 +2,13 @@ import math
 # ceil - 올림
 # round(n,자리수) - 반올림
 # floor - 내림
+# 큰거, 작은거, 중간 순
 num = list(map(float,input().split()))
+new_num = sorted(num)
 
 def calc(num):
-    max_val = max(num)
-    min_val = min(num)
-    for elem in num:
-        if min_val <= elem and max_val >= elem:
-            mid_val = elem
-    for i in range(3):
-        if num[i] == min_val:
-            print(math.floor(num[i]),end=' ')
-        elif num[i] == max_val:
-            print(math.ceil(num[i]),end=' ')
-        else:
-            print(int(round(num[i],0)),end=' ')
+    print(math.ceil(num[2]),end=' ')
+    print(math.floor(num[0]),end=' ')
+    print(int(round(num[1],0)))
 
-calc(num)
+calc(new_num)
